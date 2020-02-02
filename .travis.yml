@@ -3,6 +3,7 @@ services:
   - docker
 
 env:
+  # multiple env with same key runs a matrix process execution
   - NPM_TARGET=test
   - NPM_TARGET=lint # for checking syntax errors
   - NPM_TARGET=coverage
