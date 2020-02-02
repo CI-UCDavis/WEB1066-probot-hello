@@ -9,7 +9,7 @@ env:
 
 script:
   - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
-  - docker build -t node:$NODE_VERSION --build-arg NODE_IMAGE="node:${NODE_IMAGE}" .
+  - docker build -t node:$NODE_VERSION --build-arg NODE_IMAGE="node:${NODE_VERSION}" .
   - docker images #list the docker images
   - docker tag node:$NODE_VERSION $DOCKER_USERNAME/probot-hello:$(git rev-parse HEAD) #the docker repo must be created before hand 9
   - docker push $DOCKER_USERNAME/probot-hello:$(git rev-parse HEAD)
